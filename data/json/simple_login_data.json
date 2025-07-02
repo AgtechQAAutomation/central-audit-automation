@@ -1,0 +1,12 @@
+{
+    "validUser": {
+        "organization": "Harshit",
+        "email": "harshit.agarwal@kjbnlabs.in",
+        "password": "qwerty"
+    },
+    "invalidUser": {
+        "organization": "test_org_invalid",
+        "email": "invalid@example.com",
+        "password": "wrongpassword"
+    }
+}

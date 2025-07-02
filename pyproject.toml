@@ -1,0 +1,33 @@
+[project]
+name = "mobile-py-automation"
+version = "0.1.0"
+description = "Python automation project for mobile testing."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+  "appium-python-client>=2.6.0",
+  "grpcio>=1.56.0",
+  "grpcio-tools>=1.56.0",
+  "gql[requests]>=3.0.0",
+  "requests>=2.28.0",
+  "python-dotenv>=0.20.0",
+  "pytest>=7.0",
+  "pytest-bdd",
+  "faker>=18.0.0",
+  "playwright",
+  "pytest-playwright"
+]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = [
+  "core",
+  "core.base",
+  "core.pages",
+  "core.utils",
+  "data",
+  "reports"
+]
