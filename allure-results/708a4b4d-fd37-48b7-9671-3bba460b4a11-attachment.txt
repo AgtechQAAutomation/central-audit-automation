@@ -1,0 +1,3 @@
+2025-07-08 12:11:02,671 - [INFO] - conftest - Setting default page timeout to: 10000ms (conftest.py:43)
+2025-07-08 12:11:02,672 - [INFO] - conftest - Logging in for test validation screen... (conftest.py:92)
+2025-07-08 12:11:02,672 - [INFO] - core.pages.login.login_page - Navigating to login page: http://148.113.1.233/login (login_page.py:23)

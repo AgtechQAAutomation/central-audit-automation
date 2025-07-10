@@ -1,0 +1,19 @@
+[32mINFO    [0m conftest:conftest.py:42 Setting default page timeout to: 10000ms
+[32mINFO    [0m test_login:test_login.py:69 Starting test: TC_WEB_LOGIN_002 - Invalid login attempt for user invalid@example.com
+[32mINFO    [0m core.pages.login.login_page:login_page.py:23 Navigating to login page: http://148.113.1.233/login
+[32mINFO    [0m core.base.base_page:base_page.py:35 Filling element 'input[placeholder="Enter your organization name"]' with value: 'test_org_invalid'
+[32mINFO    [0m core.base.base_page:base_page.py:35 Filling element 'input[placeholder="ex. email@domain.com"]' with value: 'invalid@example.com'
+[32mINFO    [0m core.base.base_page:base_page.py:26 Clicking element: //button[text()="Continue"]
+[32mINFO    [0m core.pages.login.login_page:login_page.py:33 Entered Org: 'test_org_invalid', Email: 'invalid@example.com' and clicked Continue.
+[33mWARNING [0m core.pages.login.login_page:login_page.py:39 Neither password input nor error message appeared after first continue: Page.wait_for_selector: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator("input[placeholder=\"Password\"], p.bodySm:has-text(\"Failed to get authentication method. Please try again later.\")") to be visible
+
+[32mINFO    [0m core.base.base_page:base_page.py:60 Checking visibility of element: input[placeholder="Password"]
+[32mINFO    [0m test_login:test_login.py:82 Password input not visible after first step, error likely already displayed.
+[32mINFO    [0m core.pages.login.login_page:login_page.py:73 Providing locator for error message element.
+[1m[31mERROR   [0m test_login:test_login.py:98 AssertionError: Error message not visible or text mismatch. Error: Locator expected to be visible
+Actual value: <element(s) not found> 
+Call log:
+  - Expect "to_be_visible" with timeout 5000ms
+  - waiting for locator("p.bodySm:has-text(\"Failed to get authentication method. Please try again later.\")")

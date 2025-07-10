@@ -70,3 +70,10 @@ class BasePage:
     def expect_locator(self, selector: str): # For direct use with Playwright's expect
         from playwright.sync_api import expect as playwright_expect
         return playwright_expect(self.page.locator(selector))
+    
+    def wait_for_element_visible(self, selector: str, timeout: int = 10000):
+        """
+        Wait until the element specified by the selector is visible.
+        """
+        LOGGER.info(f"Waiting for element to be visible: {selector}")
+        self.page.wait_for_selector(selector, state="visible", timeout=timeout)

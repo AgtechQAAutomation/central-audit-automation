@@ -1,0 +1,17 @@
+2025-07-07 15:51:40,099 - [INFO] - conftest - Setting default page timeout to: 10000ms (conftest.py:42)
+2025-07-07 15:51:40,101 - [INFO] - test_login - Starting test: TC_WEB_LOGIN_002 - Invalid login attempt for user invalid@example.com (test_login.py:69)
+2025-07-07 15:51:40,101 - [INFO] - core.pages.login.login_page - Navigating to login page: http://148.113.1.233/login (login_page.py:23)
+2025-07-07 15:51:41,125 - [INFO] - core.base.base_page - Waiting for element to be visible: input[placeholder="Enter your organization name"] (base_page.py:78)
+2025-07-07 15:51:41,141 - [INFO] - core.base.base_page - Filling element 'input[placeholder="Enter your organization name"]' with value: 'test_org_invalid' (base_page.py:35)
+2025-07-07 15:51:41,147 - [INFO] - core.base.base_page - Filling element 'input[placeholder="ex. email@domain.com"]' with value: 'invalid@example.com' (base_page.py:35)
+2025-07-07 15:51:41,151 - [INFO] - core.base.base_page - Clicking element: button:has-text("Continue") (base_page.py:26)
+2025-07-07 15:51:41,325 - [INFO] - core.pages.login.login_page - Entered Org: 'test_org_invalid', Email: 'invalid@example.com' and clicked Continue. (login_page.py:32)
+2025-07-07 15:51:48,329 - [WARNING] - core.pages.login.login_page - Neither password input nor error message appeared after first continue: Page.wait_for_selector: Timeout 7000ms exceeded.
+Call log:
+  - waiting for locator("input[placeholder=\"Password\"], p.bodySm:has-text(\"Failed to get authentication method. Please try again later.\")") to be visible
+ (login_page.py:41)
+2025-07-07 15:51:48,342 - [INFO] - core.base.base_page - Checking visibility of element: input[placeholder="Password"] (base_page.py:60)
+2025-07-07 15:51:48,343 - [INFO] - test_login - Password input not visible after first step, error likely already displayed. (test_login.py:82)
+2025-07-07 15:51:48,343 - [INFO] - core.pages.login.login_page - Providing locator for error message element. (login_page.py:69)
+2025-07-07 15:51:48,350 - [INFO] - test_login - Error message visible and content verified: 'Please enter valid credentials' (test_login.py:98)
+2025-07-07 15:51:48,353 - [INFO] - test_login - User correctly remained on the login page. (test_login.py:110)

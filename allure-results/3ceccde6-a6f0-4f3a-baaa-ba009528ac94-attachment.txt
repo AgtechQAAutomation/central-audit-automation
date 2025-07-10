@@ -1,0 +1,2 @@
+2025-07-07 13:51:05,380 - [INFO] - conftest - Loading simple_login_data from: /Users/akash.mandanna/Documents/central-audit-automation/data/json/simple_login_data.json (conftest.py:67)
+2025-07-07 13:51:05,380 - [INFO] - conftest - App environment config loaded: {'BASE_URL': None, 'API_BASE_URL': None, 'GRPC_SERVER_ADDRESS': None, 'DEFAULT_TIMEOUT': 10000, 'HEADLESS_MODE_CONFIG': False, 'DEFAULT_BROWSER_CONFIG': 'chromium', 'TRACE_MODE_CONFIG': 'on-first-retry'} (conftest.py:87)

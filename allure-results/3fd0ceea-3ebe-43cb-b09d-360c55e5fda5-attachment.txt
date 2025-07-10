@@ -1,0 +1,21 @@
+2025-07-07 15:39:00,985 - [INFO] - conftest - Setting default page timeout to: 10000ms (conftest.py:42)
+2025-07-07 15:39:00,986 - [INFO] - test_login - Starting test: TC_WEB_LOGIN_002 - Invalid login attempt for user invalid@example.com (test_login.py:69)
+2025-07-07 15:39:00,986 - [INFO] - core.pages.login.login_page - Navigating to login page: http://148.113.1.233/login (login_page.py:23)
+2025-07-07 15:39:01,982 - [INFO] - core.base.base_page - Waiting for element to be visible: input[placeholder="Enter your organization name"] (base_page.py:78)
+2025-07-07 15:39:01,997 - [INFO] - core.base.base_page - Filling element 'input[placeholder="Enter your organization name"]' with value: 'test_org_invalid' (base_page.py:35)
+2025-07-07 15:39:02,004 - [INFO] - core.base.base_page - Filling element 'input[placeholder="ex. email@domain.com"]' with value: 'invalid@example.com' (base_page.py:35)
+2025-07-07 15:39:02,006 - [INFO] - core.base.base_page - Clicking element: button:has-text("Continue") (base_page.py:26)
+2025-07-07 15:39:02,158 - [INFO] - core.pages.login.login_page - Entered Org: 'test_org_invalid', Email: 'invalid@example.com' and clicked Continue. (login_page.py:32)
+2025-07-07 15:39:09,164 - [WARNING] - core.pages.login.login_page - Neither password input nor error message appeared after first continue: Page.wait_for_selector: Timeout 7000ms exceeded.
+Call log:
+  - waiting for locator("input[placeholder=\"Password\"], p.bodySm:has-text(\"Failed to get authentication method. Please try again later.\")") to be visible
+ (login_page.py:41)
+2025-07-07 15:39:09,181 - [INFO] - core.base.base_page - Checking visibility of element: input[placeholder="Password"] (base_page.py:60)
+2025-07-07 15:39:09,182 - [INFO] - test_login - Password input not visible after first step, error likely already displayed. (test_login.py:82)
+2025-07-07 15:39:09,183 - [INFO] - core.pages.login.login_page - Providing locator for error message element. (login_page.py:69)
+2025-07-07 15:39:14,188 - [ERROR] - test_login - AssertionError: Error message not visible or text mismatch. Error: Locator expected to be visible
+Actual value: <element(s) not found> 
+Call log:
+  - Expect "to_be_visible" with timeout 5000ms
+  - waiting for locator("p.bodySm:has-text(\"Failed to get authentication method. Please try again later.\")")
+ (test_login.py:98)

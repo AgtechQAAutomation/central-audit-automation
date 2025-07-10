@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="en"><head>
+            <meta charset="UTF-8">
+            <title>Error</title>
+            <script type="module">
+              const error = {"message":"Cannot find module 'dayjs' imported from '/ui/frontend/raithu-web-app/app/features/user_management/presentation/pages/user_management_page.tsx'","stack":"    at nodeImport (file:///ui/frontend/raithu-web-app/node_modules/vite/dist/node/chunks/dep-DbT5NFX0.js:53056:19)\n    at ssrImport (file:///ui/frontend/raithu-web-app/node_modules/vite/dist/node/chunks/dep-DbT5NFX0.js:52923:22)\n    at eval (/ui/frontend/raithu-web-app/app/features/user_management/presentation/pages/user_management_page.tsx:6:37)\n    at instantiateModule (file:///ui/frontend/raithu-web-app/node_modules/vite/dist/node/chunks/dep-DbT5NFX0.js:52981:5)","frame":""}
+              try {
+                const { ErrorOverlay } = await import("/@vite/client")
+                document.body.appendChild(new ErrorOverlay(error))
+              } catch {
+                const h = (tag, text) => {
+                  const el = document.createElement(tag)
+                  el.textContent = text
+                  return el
+                }
+                document.body.appendChild(h('h1', 'Internal Server Error'))
+                document.body.appendChild(h('h2', error.message))
+                document.body.appendChild(h('pre', error.stack))
+                document.body.appendChild(h('p', '(Error overlay failed to load)'))
+              }
+            </script>
+          </head>
+          <body>
+          
+        
+      <vite-error-overlay></vite-error-overlay></body></html>

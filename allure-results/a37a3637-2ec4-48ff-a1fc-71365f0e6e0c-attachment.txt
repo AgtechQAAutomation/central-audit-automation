@@ -1,0 +1,8 @@
+2025-07-07 15:36:30,953 - [INFO] - conftest - Setting default page timeout to: 10000ms (conftest.py:42)
+2025-07-07 15:36:30,954 - [INFO] - test_login - Starting test: TC_WEB_LOGIN_002 - Invalid login attempt for user invalid@example.com (test_login.py:69)
+2025-07-07 15:36:30,954 - [INFO] - core.pages.login.login_page - Navigating to login page: http://148.113.1.233/login (login_page.py:21)
+2025-07-07 15:36:32,490 - [INFO] - core.base.base_page - Waiting for element to be visible: input[placeholder="Enter your organization name"] (base_page.py:78)
+2025-07-07 15:36:32,506 - [INFO] - core.base.base_page - Filling element 'input[placeholder="Enter your organization name"]' with value: 'test_org_invalid' (base_page.py:35)
+2025-07-07 15:36:32,512 - [INFO] - core.base.base_page - Filling element 'input[placeholder="ex. email@domain.com"]' with value: 'invalid@example.com' (base_page.py:35)
+2025-07-07 15:36:32,516 - [INFO] - core.base.base_page - Clicking element: button:has-text("Continue") (base_page.py:26)
+2025-07-07 15:36:32,644 - [INFO] - core.pages.login.login_page - Entered Org: 'test_org_invalid', Email: 'invalid@example.com' and clicked Continue. (login_page.py:30)

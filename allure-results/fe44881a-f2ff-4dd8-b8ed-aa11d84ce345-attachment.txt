@@ -1,0 +1,16 @@
+2025-07-08 12:42:21,548 - [INFO] - conftest - Setting default page timeout to: 20000ms (conftest.py:43)
+2025-07-08 12:42:21,549 - [INFO] - conftest - Logging in for test validation screen... (conftest.py:92)
+2025-07-08 12:42:21,550 - [INFO] - core.pages.login.login_page - Navigating to login page: http://148.113.1.233/login (login_page.py:23)
+2025-07-08 12:42:24,841 - [INFO] - core.base.base_page - Waiting for element to be visible: input[placeholder="Enter your organization name"] (base_page.py:78)
+2025-07-08 12:42:24,867 - [INFO] - core.pages.login.login_page - Navigating to login page: http://148.113.1.233/login (login_page.py:23)
+2025-07-08 12:42:26,327 - [INFO] - core.base.base_page - Waiting for element to be visible: input[placeholder="Enter your organization name"] (base_page.py:78)
+2025-07-08 12:42:26,350 - [INFO] - core.base.base_page - Filling element 'input[placeholder="Enter your organization name"]' with value: 'KJBN7' (base_page.py:35)
+2025-07-08 12:42:26,364 - [INFO] - core.base.base_page - Filling element 'input[placeholder="ex. email@domain.com"]' with value: 'rocewif537@iamtile.c...' (base_page.py:35)
+2025-07-08 12:42:26,372 - [INFO] - core.base.base_page - Clicking element: button:has-text("Continue") (base_page.py:26)
+2025-07-08 12:42:26,524 - [INFO] - core.pages.login.login_page - Entered Org: 'KJBN7', Email: 'rocewif537@iamtile.com' and clicked Continue. (login_page.py:32)
+2025-07-08 12:42:33,530 - [WARNING] - core.pages.login.login_page - Neither password input nor error message appeared after first continue: Page.wait_for_selector: Timeout 7000ms exceeded.
+Call log:
+  - waiting for locator("input[placeholder=\"Password\"], p.bodySm:has-text(\"Failed to get authentication method. Please try again later.\")") to be visible
+ (login_page.py:41)
+2025-07-08 12:42:33,541 - [INFO] - core.base.base_page - Waiting for element to be visible: input[placeholder="Password"] (base_page.py:78)
+2025-07-08 12:42:40,550 - [WARNING] - core.pages.login.login_page - Password input not visible, cannot proceed with entering password during full login flow. (login_page.py:59)

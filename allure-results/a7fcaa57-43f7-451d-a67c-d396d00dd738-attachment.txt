@@ -1,0 +1,21 @@
+2025-07-07 15:36:17,597 - [INFO] - conftest - Loading simple_login_data from: /Users/akash.mandanna/Documents/central-audit-automation/data/json/simple_login_data.json (conftest.py:66)
+2025-07-07 15:36:17,597 - [INFO] - conftest - App environment config loaded: {'BASE_URL': 'http://your-server-url.com', 'API_BASE_URL': None, 'GRPC_SERVER_ADDRESS': None, 'DEFAULT_TIMEOUT': 10000, 'HEADLESS_MODE_CONFIG': False, 'DEFAULT_BROWSER_CONFIG': 'chromium', 'TRACE_MODE_CONFIG': 'on-first-retry'} (conftest.py:86)
+2025-07-07 15:36:19,252 - [INFO] - conftest - Setting default page timeout to: 10000ms (conftest.py:42)
+2025-07-07 15:36:19,257 - [INFO] - test_login - Starting test: TC_WEB_LOGIN_001 - Valid login for user rocewif537@iamtile.com (test_login.py:40)
+2025-07-07 15:36:19,259 - [INFO] - core.pages.login.login_page - Navigating to login page: http://148.113.1.233/login (login_page.py:21)
+2025-07-07 15:36:20,308 - [INFO] - core.base.base_page - Waiting for element to be visible: input[placeholder="Enter your organization name"] (base_page.py:78)
+2025-07-07 15:36:20,330 - [INFO] - core.base.base_page - Filling element 'input[placeholder="Enter your organization name"]' with value: 'KJBN7' (base_page.py:35)
+2025-07-07 15:36:20,340 - [INFO] - core.base.base_page - Filling element 'input[placeholder="ex. email@domain.com"]' with value: 'rocewif537@iamtile.c...' (base_page.py:35)
+2025-07-07 15:36:20,345 - [INFO] - core.base.base_page - Clicking element: button:has-text("Continue") (base_page.py:26)
+2025-07-07 15:36:20,578 - [INFO] - core.pages.login.login_page - Entered Org: 'KJBN7', Email: 'rocewif537@iamtile.com' and clicked Continue. (login_page.py:30)
+2025-07-07 15:36:20,639 - [INFO] - core.pages.login.login_page - Password input or error message became visible. (login_page.py:38)
+2025-07-07 15:36:20,640 - [INFO] - core.base.base_page - Checking visibility of element: input[placeholder="Password"] (base_page.py:60)
+2025-07-07 15:36:20,640 - [WARNING] - core.pages.login.login_page - Password input not visible after entering org/email. (login_page.py:72)
+2025-07-07 15:36:30,649 - [ERROR] - test_login - AssertionError: Did not navigate to home page. URL: http://148.113.1.233/login?step=2. Error: Page URL expected to be 're.compile('.*/home/?$')'
+Actual value: http://148.113.1.233/login?step=2 
+Call log:
+  - Expect "to_have_url" with timeout 10000ms
+  - waiting for locator(":root")
+    14 × locator resolved to <html lang="en" dir="ltr" class="light">…</html>
+       - unexpected value "http://148.113.1.233/login?step=2"
+ (test_login.py:53)

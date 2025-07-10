@@ -1,0 +1,17 @@
+[32mINFO    [0m conftest:conftest.py:43 Setting default page timeout to: 20000ms
+[32mINFO    [0m conftest:conftest.py:92 Logging in for test validation screen...
+[32mINFO    [0m core.pages.login.login_page:login_page.py:23 Navigating to login page: http://148.113.1.233/login
+[32mINFO    [0m core.base.base_page:base_page.py:78 Waiting for element to be visible: input[placeholder="Enter your organization name"]
+[32mINFO    [0m core.pages.login.login_page:login_page.py:23 Navigating to login page: http://148.113.1.233/login
+[32mINFO    [0m core.base.base_page:base_page.py:78 Waiting for element to be visible: input[placeholder="Enter your organization name"]
+[32mINFO    [0m core.base.base_page:base_page.py:35 Filling element 'input[placeholder="Enter your organization name"]' with value: 'KJBN7'
+[32mINFO    [0m core.base.base_page:base_page.py:35 Filling element 'input[placeholder="ex. email@domain.com"]' with value: 'rocewif537@iamtile.c...'
+[32mINFO    [0m core.base.base_page:base_page.py:26 Clicking element: button:has-text("Continue")
+[32mINFO    [0m core.pages.login.login_page:login_page.py:32 Entered Org: 'KJBN7', Email: 'rocewif537@iamtile.com' and clicked Continue.
+[32mINFO    [0m core.pages.login.login_page:login_page.py:39 Password input or error message became visible after first step.
+[32mINFO    [0m core.base.base_page:base_page.py:78 Waiting for element to be visible: input[placeholder="Password"]
+[32mINFO    [0m core.base.base_page:base_page.py:78 Waiting for element to be visible: input[placeholder="Password"]
+[32mINFO    [0m core.base.base_page:base_page.py:35 Filling element 'input[placeholder="Password"]' with value: '****'
+[32mINFO    [0m core.base.base_page:base_page.py:26 Clicking element: button:has-text("Continue")
+[32mINFO    [0m core.pages.login.login_page:login_page.py:49 Entered password and clicked Continue.
+[32mINFO    [0m conftest:conftest.py:110 Clicking Audit button to navigate to /audit/profile

@@ -1,5 +1,6 @@
 import pytest
 import allure 
+import re
 from playwright.sync_api import expect as playwright_expect
 from core.pages.login.login_page import LoginPage 
 from tests.base.base_test import BaseTest
@@ -44,7 +45,7 @@ class TestSimpleLoginFunctionality(BaseTest):
         with allure.step("Verify navigation to the home page after successful login"):
             try:
                 playwright_expect(self.page).to_have_url(
-                    lambda url: "/home/" in url, # Adjust if your home URL is different
+                    re.compile(r".*/home/?$"),
                     timeout=self.app_env_config.get("DEFAULT_TIMEOUT", 10000)
                 )
                 LOGGER.info("Successfully navigated to the home page.")
@@ -84,14 +85,16 @@ class TestSimpleLoginFunctionality(BaseTest):
             try:
                 error_message_element = login_page.get_error_message_element()
                 playwright_expect(error_message_element).to_be_visible(
-                    timeout=self.app_env_config.get("ASSERTION_TIMEOUT", 5000)
+                timeout=self.app_env_config.get("ASSERTION_TIMEOUT", 5000)
                 )
                 actual_error_text = error_message_element.text_content()
                 allure.attach(actual_error_text, name="Actual Error Message", attachment_type=allure.attachment_type.TEXT)
-                # You should verify the content of the error message
-                expected_error_substring = "Failed to get authentication method" # From your LoginPage locator
+
+                # ✅ Correct expected message here
+                expected_error_substring = "Please enter valid credentials"
                 assert expected_error_substring in actual_error_text, \
                     f"Error message text mismatch. Expected to contain '{expected_error_substring}', got '{actual_error_text}'"
+
                 LOGGER.info(f"Error message visible and content verified: '{actual_error_text}'")
             except Exception as e:
                 LOGGER.error(f"AssertionError: Error message not visible or text mismatch. Error: {e}")
@@ -101,7 +104,7 @@ class TestSimpleLoginFunctionality(BaseTest):
             try:
                 # Check current URL contains /login or is the specific login page URL
                 playwright_expect(self.page).to_have_url(
-                    lambda url: login_page.login_url_path in url, # Using path from LoginPage
+                    re.compile(r".*/login(\?.*)?$"),
                     timeout=self.app_env_config.get("DEFAULT_TIMEOUT", 5000)
                 )
                 LOGGER.info("User correctly remained on the login page.")

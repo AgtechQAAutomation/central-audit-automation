@@ -1,0 +1,20 @@
+2025-07-07 13:52:13,657 - [INFO] - conftest - Loading simple_login_data from: /Users/akash.mandanna/Documents/central-audit-automation/data/json/simple_login_data.json (conftest.py:66)
+2025-07-07 13:52:13,658 - [INFO] - conftest - App environment config loaded: {'BASE_URL': None, 'API_BASE_URL': None, 'GRPC_SERVER_ADDRESS': None, 'DEFAULT_TIMEOUT': 10000, 'HEADLESS_MODE_CONFIG': False, 'DEFAULT_BROWSER_CONFIG': 'chromium', 'TRACE_MODE_CONFIG': 'on-first-retry'} (conftest.py:86)
+2025-07-07 13:52:17,321 - [INFO] - conftest - Setting default page timeout to: 10000ms (conftest.py:42)
+2025-07-07 13:52:17,322 - [INFO] - test_login - Starting test: TC_WEB_LOGIN_001 - Valid login for user harshit.agarwal@kjbnlabs.in (test_login.py:40)
+2025-07-07 13:52:17,322 - [INFO] - core.pages.login.login_page - Navigating to login page: http://148.113.1.233/login (login_page.py:23)
+2025-07-07 13:52:18,242 - [INFO] - core.base.base_page - Filling element 'input[placeholder="Enter your organization name"]' with value: 'Harshit' (base_page.py:35)
+2025-07-07 13:52:18,266 - [INFO] - core.base.base_page - Filling element 'input[placeholder="ex. email@domain.com"]' with value: 'harshit.agarwal@kjbn...' (base_page.py:35)
+2025-07-07 13:52:18,270 - [INFO] - core.base.base_page - Clicking element: //button[text()="Continue"] (base_page.py:26)
+2025-07-07 13:52:18,514 - [INFO] - core.pages.login.login_page - Entered Org: 'Harshit', Email: 'harshit.agarwal@kjbnlabs.in' and clicked Continue. (login_page.py:33)
+2025-07-07 13:52:18,564 - [INFO] - core.pages.login.login_page - Password input or error message became visible after first step. (login_page.py:37)
+2025-07-07 13:52:18,565 - [INFO] - core.base.base_page - Checking visibility of element: input[placeholder="Password"] (base_page.py:60)
+2025-07-07 13:52:18,565 - [WARNING] - core.pages.login.login_page - Password input not visible, cannot proceed with entering password during full login flow. Error might have occurred. (login_page.py:60)
+2025-07-07 13:52:28,581 - [ERROR] - test_login - AssertionError: Did not navigate to home page. URL: http://148.113.1.233/login?step=2. Error: Page URL expected to be 're.compile('.*/home/?$')'
+Actual value: http://148.113.1.233/login?step=2 
+Call log:
+  - Expect "to_have_url" with timeout 10000ms
+  - waiting for locator(":root")
+    14 × locator resolved to <html lang="en" dir="ltr" class="light">…</html>
+       - unexpected value "http://148.113.1.233/login?step=2"
+ (test_login.py:53)

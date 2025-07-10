@@ -2,8 +2,9 @@ import pytest
 from playwright.sync_api import Playwright, APIRequestContext, Page
 from core.utils.logger import get_logger 
 import os
-
+from core.pages.login.login_page import LoginPage
 from dotenv import load_dotenv
+
 load_dotenv() # Loads variables from .env into environment variables
 
 LOGGER = get_logger(__name__)
@@ -85,3 +86,32 @@ def app_env_config():
     }
     LOGGER.info(f"App environment config loaded: {config}")
     return config
+
+@pytest.fixture(scope="function")
+def logged_in_page(page: Page):
+    LOGGER.info("Logging in for test validation screen...")
+
+    # Load login credentials from environment
+    org = os.getenv("VALIDATOR_ORG")
+    email = os.getenv("VALIDATOR_EMAIL")
+    password = os.getenv("VALIDATOR_PASSWORD")
+
+    if not all([org, email, password]):
+        pytest.fail("Missing VALIDATOR_ORG, VALIDATOR_EMAIL, or VALIDATOR_PASSWORD in .env")
+
+    login_page = LoginPage(page)
+    login_page.goto()
+    login_page.login(org, email, password)
+
+    # ✅ Wait until /home
+    page.wait_for_url("**/home", timeout=10000)
+
+    # ✅ Click on Audit button to go to /audit/profile
+    LOGGER.info("Clicking Audit button to navigate to /audit/profile")
+    page.click("a[data-testid='secure-link-AUDIT_PROFILE']")
+
+    # ✅ Wait for audit profile screen
+    page.wait_for_url("**/audit/profile", timeout=10000)
+    LOGGER.info("Successfully landed on audit profile screen.")
+
+    return page
