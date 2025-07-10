@@ -33,4 +33,7 @@ build/
 # Coverage
 .coverage
 coverage.xml
-htmlcov/
+htmlcov/.env
+.env.local
+.vscode/
+__pycache__/
